@@ -23,6 +23,12 @@ public class SnakeLadderGame {
 			default:
 				currentPosition = currentPosition;
 		}
+		if (currentPosition > 100) {
+			currentPosition = currentPosition - noDie;
+		} else if (currentPosition == 100) {
+			System.out.println("Player reached: " + currentPosition +" Player Won!");
+			break;
+		}
 		System.out.println("Current position: " + currentPosition);
 		}
 
