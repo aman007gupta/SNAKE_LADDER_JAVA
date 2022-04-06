@@ -6,6 +6,7 @@ public class SnakeLadderGame {
 		int startingPosition = 0;
 		int currentPosition = 0;
 		System.out.println("Game start at position: " + startingPosition);
+		while (currentPosition <= 100) {
 		int noDie = (int) Math.floor(Math.random() * 10) % 6 + 1;
 		System.out.println("Number on Die: " + noDie);
 		int options = (int) Math.floor(Math.random() * 10) % 3;
@@ -15,11 +16,15 @@ public class SnakeLadderGame {
 				break;
 			case IS_SNAKE:
 				currentPosition = currentPosition - noDie;
+				if (currentPosition < 1) {
+					currentPosition = 0;
+				}
 				break;
 			default:
 				currentPosition = currentPosition;
 		}
 		System.out.println("Current position: " + currentPosition);
+		}
 
 	}
 }
